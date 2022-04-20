@@ -1,0 +1,14 @@
+.pop-cources {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-content: center;
+  text-align: center;
+  p {
+    display: grid;
+    justify-content: center;
+  }
+}
+h2 {
+  display: grid;
+  justify-content: center;
+}

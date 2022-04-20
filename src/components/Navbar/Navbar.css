@@ -1,0 +1,21 @@
+.active {
+  text-decoration: underline !important;
+  color: rgb(251, 251, 243) !important;
+  font-weight: bold;
+}
+.mobile-link {
+  display: flex;
+  text-decoration: none;
+  color: rgb(243, 241, 241) !important;
+}
+
+.navbar-container {
+  background-color: #f7f7f7 !important;
+  box-shadow: none !important;
+}
+.n-link {
+  color: rgb(32, 33, 32) !important;
+  border-radius: 50px !important;
+  width: 8em;
+  text-align: center;
+}

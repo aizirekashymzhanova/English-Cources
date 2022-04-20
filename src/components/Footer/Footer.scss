@@ -1,0 +1,28 @@
+.footer {
+  margin-top: auto;
+  background: #f7f7f7;
+  justify-content: center !important;
+  align-items: center;
+  display: flex;
+  padding: 20px;
+}
+
+.footer-inside {
+  display: flex;
+  justify-content: center !important;
+  text-align: center;
+}
+span {
+  text-align: center;
+}
+.contacts {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @media all and (max-width: 500px) {
+    grid-template-columns: 1fr;
+  }
+}
+.contact-item {
+  display: flex;
+  text-align: left;
+}
