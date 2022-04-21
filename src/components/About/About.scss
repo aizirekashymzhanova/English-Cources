@@ -1,0 +1,17 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 500px;
+  padding: 20px 40px;
+  @media all and (max-width: 700px) {
+    grid-template-columns: 1fr;
+    padding: 5px;
+  }
+}
+h2 {
+  font-weight: bold;
+  font-size: 50px;
+}
+
+p {
+  font-size: 18px;
+}

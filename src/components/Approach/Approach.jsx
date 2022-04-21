@@ -8,7 +8,7 @@ const Approach = () => {
     <div className="approach">
       <div className="right">
         <h4> WHAT TO EXPECT? </h4>
-        <br />
+
         <h2> Our Approach</h2>
 
         <p>
@@ -25,59 +25,51 @@ const Approach = () => {
         <div className="app-item">
           <div className="item-descr">
             <img
-              width="65%"
-              src="https://i1.wp.com/englishzone.co/wp-content/uploads/2020/04/Vocabulary-Building.png?fit=455%2C365&ssl=1"
+              src="https://i1.wp.com/englishzone.co/wp-content/uploads/2020/04/Vocabulary-Building.png?fit=455%2C375&ssl=1"
               alt=""
             />
-            <p>Vocabulary Building</p>
+            <span>Vocabulary Building</span>
           </div>
         </div>
         <div className="app-item">
           <div className="item-descr">
             <img
-              width="65%"
               src="https://i2.wp.com/englishzone.co/wp-content/uploads/2020/04/Group-Discussions.png?fit=795%2C518&ssl=1"
               alt=""
             />
-            <p>Group Discussions</p>
+            <span>Grous Discussions</span>
           </div>
           <div className="item-descr">
             <img
-              width="65%"
               src="https://i1.wp.com/englishzone.co/wp-content/uploads/2020/04/Speaking.png?fit=574%2C509&ssl=1"
               alt=""
             />
-            <p>Pronounciation</p>
+            <span>Pronounciation</span>
           </div>
         </div>
-        <div className="app-item">
+        <div className="app-item app-item-3">
           <div className="item-descr">
             <img
-              width="65%"
               src="https://i0.wp.com/englishzone.co/wp-content/uploads/2020/04/Presentations.png?fit=967%2C518&ssl=1"
               alt=""
             />
-            <p>Presentations</p>
+            <span>Presentations</span>
           </div>
-          <div className="app-item">
-            <div className="item-descr">
-              <img
-                width="65%"
-                src="https://i2.wp.com/englishzone.co/wp-content/uploads/2020/04/Writing-Skills.png?fit=507%2C513&ssl=1"
-                alt=""
-              />
-              <p>Grammar Review</p>
-            </div>
+
+          <div className="item-descr">
+            <img
+              src="https://i2.wp.com/englishzone.co/wp-content/uploads/2020/04/Writing-Skills.png?fit=507%2C513&ssl=1"
+              alt=""
+            />
+            <span>Grammar Review</span>
           </div>
-          <div className="app-item">
-            <div className="item-descr">
-              <img
-                width="65%"
-                src="https://i0.wp.com/englishzone.co/wp-content/uploads/2020/04/Games.png?fit=996%2C793&ssl=1"
-                alt=""
-              />
-              <p>Games</p>
-            </div>
+
+          <div className="item-descr">
+            <img
+              src="https://i0.wp.com/englishzone.co/wp-content/uploads/2020/04/Games.png?fit=996%2C793&ssl=1"
+              alt=""
+            />
+            <span>Games</span>
           </div>
         </div>
       </div>

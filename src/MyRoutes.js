@@ -15,6 +15,7 @@ import Cart from "./pages/Cart";
 import OrderForm from "./pages/OrderForm";
 import Payment from "./pages/Payment";
 import Invoice from "./pages/Invoice";
+//mport RealTimechat from "./pages/RealTimechat";
 
 const MyRoutes = () => {
   return (
@@ -30,6 +31,7 @@ const MyRoutes = () => {
         <Route path="/orderform" element={<OrderForm />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/invoice" element={<Invoice />} />
+        {/* <Route path="/chat" element={<RealTimechat />} /> */}
         <Route path="/admin" element={<Admin />}>
           <Route index element={<List />} />
           <Route path="add" element={<Add />} />

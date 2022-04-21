@@ -11,7 +11,6 @@ import FaceIcon from "@mui/icons-material/Face";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { notify } from "../Toastify/Toastify";
-// import EditCom from "./EditCom";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import ModeEditIcon from "@mui/icons-material/ModeEdit";

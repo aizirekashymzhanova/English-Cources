@@ -5,9 +5,11 @@
   gap: 20px;
 }
 .approach {
+  background-color: #f7f7f7;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-content: center;
   gap: 30px;
   padding: 10px 50px;
   @media all and (max-width: 700px) {
@@ -16,11 +18,12 @@
   }
   h2 {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 50px;
   }
   p {
     color: rgb(91, 87, 87);
-    // font-size: 18px;
+    font-size: 18px;
+    font-weight: bold;
   }
   .app-btn {
     font-weight: bold;
@@ -29,15 +32,37 @@
 .left {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 6px;
-  justify-content: center;
+  gap: 20px 2px;
+  justify-content: center !important;
   align-items: center;
 }
+
 .item-descr {
-  justify-content: center;
-  align-items: center;
+  background-color: #fff;
+  padding: 30px 10px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   display: grid;
-  p {
+  grid-template-columns: 1fr;
+  justify-content: center;
+  @media all and (max-width: 375px) {
+    padding: 10px 3px;
+  }
+
+  span {
+    margin-top: 10px;
     font-weight: bold;
+    @media all and (max-width: 375px) {
+      font-weight: normal;
+    }
+  }
+  img {
+    justify-content: center;
+    display: grid;
+    height: auto;
+    max-width: 100%;
+    margin-bottom: 10px;
   }
 }

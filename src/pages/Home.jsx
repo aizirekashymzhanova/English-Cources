@@ -1,4 +1,5 @@
 import React from "react";
+import About from "../components/About/About";
 import Approach from "../components/Approach/Approach";
 
 import Benefits from "../components/Benefits/Benefits";
@@ -10,6 +11,7 @@ const Home = () => {
   return (
     <div>
       <Hero />
+      <About />
       <Approach />
       <Benefits />
       <MySlider />

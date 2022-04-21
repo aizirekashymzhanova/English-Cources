@@ -12,7 +12,7 @@ import { useComContext } from "../contexts/ComContextProvider";
 const ProdDetail = () => {
   const { prodId } = useParams();
   const { getOneProduct, oneProd } = useProductContext();
-  const { getOneCom, oneCom, getCom } = useComContext();
+  const { getCom } = useComContext();
 
   useEffect(() => {
     getOneProduct(prodId);

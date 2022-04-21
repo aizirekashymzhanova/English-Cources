@@ -81,6 +81,7 @@ export default function OneProduct({ item }) {
           >
             {item.title}
           </Typography>
+
           <IconButton
             color="inherit"
             onClick={() => {
@@ -96,12 +97,7 @@ export default function OneProduct({ item }) {
             {oneProdLikes.length}
           </IconButton>
         </div>
-        <CardMedia
-          component="img"
-          height="240"
-          image={item.img}
-          alt={item.title}
-        />
+
         <CardContent>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Typography variant="h6" color="green">
@@ -110,7 +106,12 @@ export default function OneProduct({ item }) {
             <Typography variant="body1">For: {item.type}</Typography>
           </div>
         </CardContent>
-
+        <CardMedia
+          component="img"
+          height="140"
+          image="https://logopond.com/logos/aba9157a48d224a8f7d7ca4f751dd8f1.png"
+          alt={item.title}
+        />
         <CardActions>
           {currentUser.user === null ? (
             <IconButton
