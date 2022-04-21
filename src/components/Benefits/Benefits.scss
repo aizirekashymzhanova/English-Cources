@@ -1,7 +1,9 @@
 .benefits {
   padding: 20px;
   display: grid;
+  justify-content: center;
   grid-template-columns: 500px 1fr;
+  background-color: white;
   @media all and (max-width: 920px) {
     grid-template-columns: 1fr;
   }
@@ -18,9 +20,18 @@
 }
 .b-title {
   font-weight: bold;
-  color: rgb(255, 115, 0);
+  h2 {
+    display: grid;
+    justify-content: center;
+  }
 }
-h2 {
+.benefit-item:hover {
+  transition: all;
+  background: rgb(206, 168, 213);
+
+  color: white;
+}
+.benefit-title {
   display: grid;
   justify-content: center;
 }

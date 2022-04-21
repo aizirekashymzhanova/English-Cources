@@ -20,7 +20,7 @@ const ProdList = () => {
   const [page, setPage] = useState(+searchParams.get("_page") || 1);
 
   // FILTER
-  // console.log(searchParams.get("type"));
+
   const [type, setType] = useState(searchParams.get("type") || "all");
 
   //SLIDER
@@ -40,52 +40,48 @@ const ProdList = () => {
 
   useEffect(() => {
     getProducts();
+  }, [searchParams]);
+
+  const paramsNoType = () => {
+    return {
+      _limit: PRODUCTS_LIMIT,
+      _page: page,
+      price_gte: slider,
+      q: searchParams.get("q") || "",
+    };
+  };
+  // Чтобы в самом начале рождения компонента установить query params == параметры запроса, и именно по ним делать запрос getProducts()
+  useEffect(() => {
+    if (searchParams.get("type")) {
+      setSearchParams(paramsWithType());
+    } else {
+      setSearchParams(paramsNoType());
+    }
   }, []);
 
-  //   const paramsNoType = () => {
-  //     return {
-  //       _limit: PRODUCTS_LIMIT,
-  //       _page: page,
-  //       price_gte: slider,
-  //       q: searchParams.get("q") || "",
-  //     };
-  //   };
-  //   // Чтобы в самом начале рождения компонента установить query params == параметры запроса, и именно по ним делать запрос getProducts()
-  //   useEffect(() => {
-  //     if (searchParams.get("type")) {
-  //       setSearchParams(paramsWithType());
-  //     } else {
-  //       setSearchParams(paramsNoType());
-  //     }
-  //   }, []);
+  useEffect(() => {
+    if (type === "all") {
+      setSearchParams(paramsNoType());
+    } else {
+      setSearchParams(paramsWithType());
+    }
+  }, [page, type, slider]);
 
-  //   useEffect(() => {
-  //     getProducts();
-  //   }, [searchParams]);
-
-  //   useEffect(() => {
-  //     if (type === "all") {
-  //       setSearchParams(paramsNoType());
-  //     } else {
-  //       setSearchParams(paramsWithType());
-  //     }
-  //   }, [page, type, slider]);
-
-  //   //reset
-  //   const handleReset = () => {
-  //     setType("all");
-  //     setSlider(minSliderValue);
-  //     setSearchParams({
-  //       _limit: PRODUCTS_LIMIT,
-  //       _page: page,
-  //       price_gte: slider,
-  //       q: "",
-  //     });
-  //   };
+  //reset
+  const handleReset = () => {
+    setType("all");
+    setSlider(minSliderValue);
+    setSearchParams({
+      _limit: PRODUCTS_LIMIT,
+      _page: page,
+      price_gte: slider,
+      q: "",
+    });
+  };
 
   return (
     <>
-      {/* <Filter
+      <Filter
         setPage={setPage}
         type={type}
         setType={setType}
@@ -94,7 +90,7 @@ const ProdList = () => {
         maxSliderValue={maxSliderValue}
         minSliderValue={minSliderValue}
         handleReset={handleReset}
-      /> */}
+      />
       <br />
       <Grid container spacing={2}>
         {products && products.length > 0 ? (

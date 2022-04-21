@@ -10,22 +10,26 @@ import Badge from "@mui/material/Badge";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import InfoIcon from "@mui/icons-material/Info";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { Button } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LogoutIcon from "@mui/icons-material/Logout";
-import BookmarksIcon from "@mui/icons-material/Bookmarks";
-import StarOutlineIcon from "@mui/icons-material/StarOutline";
+import StarIcon from "@mui/icons-material/Star";
 import "./Navbar.css";
 import LiveSearch from "../LiveSearch/LiveSearch";
-
+import { useAuth } from "../../contexts/AuthContextProvider";
+import { useCart } from "../../contexts/CartContextProvider";
+import Logo from "../imgs/ez-logo-removebg-preview.png";
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+  const { currentUser, logOutUser } = useAuth();
+  const { getCartLength, cartLength } = useCart();
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -64,32 +68,39 @@ export default function Navbar() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}></MenuItem>
+      {currentUser?.isLogged && (
+        <MenuItem onClick={handleMenuClose}>{currentUser?.user}</MenuItem>
+      )}
 
-      <MenuItem
-        onClick={() => {
-          handleMenuClose();
-        }}
-      >
-        <IconButton>
-          <LogoutIcon />
-        </IconButton>
-        Log out
-      </MenuItem>
+      {currentUser?.isLogged && (
+        <MenuItem
+          onClick={() => {
+            handleMenuClose();
+            logOutUser();
+          }}
+        >
+          <IconButton>
+            <LogoutIcon />
+          </IconButton>
+          Log out
+        </MenuItem>
+      )}
 
-      {
+      {!currentUser?.isLogged && (
         <MenuItem onClick={handleMenuClose}>
           <NavLink to="/register" className="mobile-link">
             Register
           </NavLink>
         </MenuItem>
-      }
+      )}
 
-      <MenuItem onClick={handleMenuClose}>
-        <NavLink to="/login" className="mobile-link">
-          Login
-        </NavLink>
-      </MenuItem>
+      {!currentUser?.isLogged && (
+        <MenuItem onClick={handleMenuClose}>
+          <NavLink to="/login" className="mobile-link">
+            Login
+          </NavLink>
+        </MenuItem>
+      )}
     </Menu>
   );
 
@@ -123,15 +134,7 @@ export default function Navbar() {
           <LocalMallIcon />
         </IconButton>
         <NavLink to="/products" className="mobile-link">
-          <p onClick={handleMobileMenuClose}>Shop</p>
-        </NavLink>
-      </MenuItem>
-      <MenuItem>
-        <IconButton>
-          <LocationOnIcon />
-        </IconButton>
-        <NavLink to="/local" className="mobile-link">
-          <p onClick={handleMobileMenuClose}>Location</p>
+          <p onClick={handleMobileMenuClose}>Cources</p>
         </NavLink>
       </MenuItem>
       <MenuItem>
@@ -153,11 +156,7 @@ export default function Navbar() {
 
       <MenuItem>
         <NavLink to="/admin" className="mobile-link">
-          <IconButton
-            size="large"
-            aria-label="show 4 new mails"
-            color="inherit"
-          >
+          <IconButton size="large" color="inherit">
             <InfoIcon />
           </IconButton>
           <p>Admin</p>
@@ -182,27 +181,19 @@ export default function Navbar() {
     <Box sx={{ position: "sticky", top: 0, right: 0, left: 0, zIndex: 11 }}>
       <AppBar position="static" className="navbar-container">
         <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <Button
-              className="n-link"
-              sx={{
-                my: 2,
-                color: "black",
+          <Button
+            className="n-link"
+            sx={{
+              my: 2,
+              color: "black",
 
-                fontSize: "14px",
-              }}
-              component={NavLink}
-              to="/"
-            >
-              EZ
-            </Button>
-          </IconButton>
+              fontSize: "14px",
+            }}
+            component={NavLink}
+            to="/"
+          >
+            <img width="25px" src={Logo} alt="" />
+          </Button>
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
@@ -232,57 +223,63 @@ export default function Navbar() {
             >
               ABOUT
             </Button>
-
-            <Button
-              className="n-link"
-              sx={{
-                my: 2,
-                color: "black",
-                display: "block",
-                fontSize: "14px",
-              }}
-              component={NavLink}
-              to="/admin"
-            >
-              ADMIN
-            </Button>
+            {currentUser?.isAdmin && (
+              <Button
+                className="n-link"
+                sx={{
+                  my: 2,
+                  color: "black",
+                  display: "block",
+                  fontSize: "14px",
+                }}
+                component={NavLink}
+                to="/admin"
+              >
+                ADMIN
+              </Button>
+            )}
           </Box>
           <LiveSearch />
+
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <RouterLink to="/favorite" style={{ color: "black" }}>
-              <IconButton
-                style={{ color: "black" }}
-                size="large"
-                edge="end"
-                aria-haspopup="true"
-              >
-                <StarOutlineIcon />
-              </IconButton>
-            </RouterLink>
             <RouterLink to="/cart" style={{ color: "black" }}>
               <IconButton
-                style={{ color: "black" }}
                 size="large"
                 edge="end"
                 aria-label="account of current user"
                 aria-haspopup="true"
+                color="inherit"
               >
-                <Badge badgeContent={5} color="warning">
-                  <LocalMallIcon />
+                <Badge badgeContent={+cartLength} color="warning">
+                  <ShoppingCartIcon />
                 </Badge>
+              </IconButton>
+            </RouterLink>
+            <RouterLink to="/favorite" style={{ color: "black" }}>
+              <IconButton
+                size="large"
+                edge="end"
+                aria-haspopup="true"
+                color="inherit"
+              >
+                <StarIcon />
               </IconButton>
             </RouterLink>
 
             <IconButton
-              style={{ color: "black" }}
               size="large"
               edge="end"
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
               onClick={handleProfileMenuOpen}
+              sx={{ color: currentUser?.isLogged ? "green" : "black" }}
             >
-              <AdminPanelSettingsIcon />
+              {currentUser?.isAdmin ? (
+                <AdminPanelSettingsIcon />
+              ) : (
+                <AccountCircle />
+              )}
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>

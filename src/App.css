@@ -36,34 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.image {
-  height: 20pc;
-  width: 100%;
-  border-radius: 10px;
-}
-
-.image.image1 {
-  background: url("https://www.naahq.org/sites/default/files/styles/article_image_large_685x380/public/images/articles/students_study.jpg?itok=rmsR4_hm");
-  background-size: cover;
-}
-.image.image2 {
-  background: url("https://www.teachingvillage.org/wp-content/uploads/2014/05/hands-raised-photo.jpg");
-  background-size: cover;
-}
-.image.image3 {
-  background: url("https://www.fluentu.com/blog/educator-english/wp-content/uploads/sites/13/2019/03/how-to-teach-english-2-e1552076924102.jpg");
-  background-size: cover;
-}
-.image.image4 {
-  background: url("https://thumbs.dreamstime.com/b/english-language-school-lesson-teacher-student-talking-130674442.jpg");
-  background-size: cover;
-}
-.image.image5 {
-  background: url("https://d39eazhratf38c.cloudfront.net/Pictures/1024x536/8/2/7/60827_136864_631984.jpg");
-  background-size: cover;
-}
-.image.image6 {
-  background: url("https://www.sjpl.org/sites/default/files/styles/hero_image/public/2019-10/Teens-with-teacher-AdobeStock_20920860-1.jpg?h=2d828ae9&itok=gdzxJiz9");
-  background-size: cover;
-}

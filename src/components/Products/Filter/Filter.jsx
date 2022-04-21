@@ -35,7 +35,7 @@ const Filter = ({
       </Button>
       <div style={{ display: filter ? "block" : "none" }}>
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Type</FormLabel>
+          <FormLabel id="demo-radio-buttons-group-label">Type: </FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="female"
@@ -48,13 +48,13 @@ const Filter = ({
             }}
           >
             <FormControlLabel value="all" control={<Radio />} label="All" />
-            <FormControlLabel value="Kids" control={<Radio />} label="Kids" />
+            <FormControlLabel value="KIDS" control={<Radio />} label="Kids" />
             <FormControlLabel
-              value="Adults"
+              value="ADULTS"
               control={<Radio />}
               label="Adults"
             />
-            <FormControlLabel value="Exam" control={<Radio />} label="Exam" />
+            <FormControlLabel value="EXAM" control={<Radio />} label="Exam" />
           </RadioGroup>
         </FormControl>
         <br />

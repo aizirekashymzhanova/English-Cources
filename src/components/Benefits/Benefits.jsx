@@ -8,7 +8,7 @@ import JoinLeftIcon from "@mui/icons-material/JoinLeft";
 const Benefits = () => {
   return (
     <>
-      <h2>WHY YOU SHOULD CHOOSE US?</h2>
+      <h2 className="benefit-title">WHY YOU SHOULD CHOOSE US?</h2>
       <div className="benefits">
         <div className="benefits-img">
           <img
