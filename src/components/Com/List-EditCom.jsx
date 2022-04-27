@@ -7,7 +7,7 @@ import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import { Container, IconButton } from "@mui/material";
-import FaceIcon from "@mui/icons-material/Face";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { notify } from "../Toastify/Toastify";
@@ -104,7 +104,7 @@ const ListCom = () => {
             <List sx={{ width: "100%", maxWidth: 360 }}>
               <ListItem alignItems="flex-start">
                 <ListItemAvatar>
-                  <FaceIcon sx={{ width: "40px", height: "40px" }} />
+                  <AccountCircleIcon sx={{ width: "40px", height: "40px" }} />
                 </ListItemAvatar>
                 <ListItemText
                   secondary={
@@ -153,7 +153,7 @@ const ListCom = () => {
           </Container>
         ))
       ) : (
-        <h2>There is no comments, yet.</h2>
+        <h5>There is no comments, yet.</h5>
       )}{" "}
     </Container>
   );

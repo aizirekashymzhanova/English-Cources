@@ -16,7 +16,7 @@ const Add = () => {
       <IconButton onClick={() => navigate(-1)}>
         <ArrowLeftIcon fontSize="large" /> Go Back
       </IconButton>
-      <h2 style={{ color: "orange" }}>Add new product</h2>
+      <h2>Add new product</h2>
       <Form saveValues={addProduct} compForEdit={false} />
     </div>
   );

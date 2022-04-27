@@ -1,4 +1,6 @@
 import "./App.css";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import Toastify from "./components/Toastify/Toastify";
 import AuthContextProvider from "./contexts/AuthContextProvider";
 import CartContextProvider from "./contexts/CartContextProvider";
@@ -9,6 +11,9 @@ import ProductContextProvider from "./contexts/ProductContextProvider";
 import MyRoutes from "./MyRoutes";
 
 function App() {
+  AOS.init({
+    duration: 2000,
+  });
   return (
     <AuthContextProvider>
       <LikeContextProvider>

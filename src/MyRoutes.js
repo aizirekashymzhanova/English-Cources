@@ -11,11 +11,15 @@ import Login from "./pages/Login";
 import ProdDetail from "./pages/ProdDetail";
 import Products from "./pages/Products";
 import Register from "./pages/Register";
+import ResetPassword from "./pages/ResetPassword";
 import Cart from "./pages/Cart";
 import OrderForm from "./pages/OrderForm";
 import Payment from "./pages/Payment";
 import Invoice from "./pages/Invoice";
-//mport RealTimechat from "./pages/RealTimechat";
+import Chat from "./pages/Chat";
+import RequireAuth from "./components/Auth/RequireAuth";
+import Contact from "./pages/Contact";
+import Error from "./pages/Error";
 
 const MyRoutes = () => {
   return (
@@ -28,11 +32,21 @@ const MyRoutes = () => {
         <Route path="/cart" element={<Cart />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/reset" element={<ResetPassword />} />
         <Route path="/orderform" element={<OrderForm />} />
         <Route path="/payment" element={<Payment />} />
         <Route path="/invoice" element={<Invoice />} />
-        {/* <Route path="/chat" element={<RealTimechat />} /> */}
-        <Route path="/admin" element={<Admin />}>
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<Error />} />
+        <Route
+          path="/admin"
+          element={
+            <RequireAuth>
+              <Admin />
+            </RequireAuth>
+          }
+        >
           <Route index element={<List />} />
           <Route path="add" element={<Add />} />
           <Route path="edit/:id" element={<Edit />} />

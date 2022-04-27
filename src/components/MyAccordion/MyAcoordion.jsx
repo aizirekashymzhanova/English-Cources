@@ -8,7 +8,7 @@ import { Container } from "@mui/material";
 
 export default function MyAccordion() {
   return (
-    <div>
+    <div style={{ marginBottom: "20px" }}>
       <h2 className="benefit-title">FAQ</h2>
       <Container>
         <Accordion>

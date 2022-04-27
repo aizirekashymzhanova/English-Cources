@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import { useSearchParams } from "react-router-dom";
 
-import { Grid, Pagination } from "@mui/material";
+import { Container, Grid, Pagination } from "@mui/material";
 import { useProductContext } from "../../../contexts/ProductContextProvider";
 import OneProduct from "../OneProduct/OneProduct";
 import { PRODUCTS_LIMIT } from "../../../helpers/consts";
@@ -10,7 +10,7 @@ import Filter from "../Filter/Filter";
 import MySkeleton from "../../Skeleton/MySkeleton";
 
 const maxSliderValue = 200;
-const minSliderValue = 1;
+const minSliderValue = 50;
 
 const ProdList = () => {
   const { getProducts, products, pageTotalCount } = useProductContext();
@@ -38,19 +38,15 @@ const ProdList = () => {
     };
   };
 
-  useEffect(() => {
-    getProducts();
-  }, [searchParams]);
-
   const paramsNoType = () => {
     return {
       _limit: PRODUCTS_LIMIT,
-      _page: page,
+      _page: +page,
       price_gte: slider,
       q: searchParams.get("q") || "",
     };
   };
-  // Чтобы в самом начале рождения компонента установить query params == параметры запроса, и именно по ним делать запрос getProducts()
+
   useEffect(() => {
     if (searchParams.get("type")) {
       setSearchParams(paramsWithType());
@@ -58,6 +54,10 @@ const ProdList = () => {
       setSearchParams(paramsNoType());
     }
   }, []);
+
+  useEffect(() => {
+    getProducts();
+  }, [searchParams]);
 
   useEffect(() => {
     if (type === "all") {
@@ -73,7 +73,7 @@ const ProdList = () => {
     setSlider(minSliderValue);
     setSearchParams({
       _limit: PRODUCTS_LIMIT,
-      _page: page,
+      _page: +page,
       price_gte: slider,
       q: "",
     });
@@ -81,33 +81,40 @@ const ProdList = () => {
 
   return (
     <>
-      <Filter
-        setPage={setPage}
-        type={type}
-        setType={setType}
-        slider={slider}
-        setSlider={setSlider}
-        maxSliderValue={maxSliderValue}
-        minSliderValue={minSliderValue}
-        handleReset={handleReset}
-      />
-      <br />
-      <Grid container spacing={2}>
-        {products && products.length > 0 ? (
-          products.map((item) => <OneProduct key={item.id} item={item} />)
-        ) : (
-          <MySkeleton />
-        )}
-      </Grid>
-      <div style={{ margin: "50px 0", textAlign: "center" }}>
-        <Pagination
-          count={+pageTotalCount}
-          color="secondary"
-          sx={{ display: "inline-block" }}
-          onChange={(event, pageVal) => setPage(pageVal)}
-          page={+page}
-        />
-      </div>
+      <Container>
+        <Grid container spacing={2} sx={{ margin: "30px auto" }}>
+          <Grid item xs={12} sm={1} md={1}>
+            <Filter
+              setPage={setPage}
+              type={type}
+              setType={setType}
+              slider={slider}
+              setSlider={setSlider}
+              maxSliderValue={maxSliderValue}
+              minSliderValue={minSliderValue}
+              handleReset={handleReset}
+            />
+          </Grid>
+          <br />
+          <Grid item xs={12} sm={11} md={11}>
+            <Grid container spacing={2}>
+              {products && products.length > 0 ? (
+                products.map((item) => <OneProduct key={item.id} item={item} />)
+              ) : (
+                <MySkeleton />
+              )}
+            </Grid>
+          </Grid>
+          <div style={{ margin: "50px auto", textAlign: "center" }}>
+            <Pagination
+              count={+pageTotalCount}
+              sx={{ display: "inline-block" }}
+              onChange={(event, pageVal) => setPage(pageVal)}
+              page={+page}
+            />
+          </div>
+        </Grid>
+      </Container>
     </>
   );
 };

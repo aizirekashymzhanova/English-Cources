@@ -18,7 +18,7 @@ const Benefits = () => {
           />
         </div>
         <div className="benefits-details">
-          <div className="benefit-item">
+          <div className="benefit-item" data-aos="fade-up" data-aos-delay="150">
             <ThumbUpIcon />
             <p className="b-title">Experienced Professionals</p>
             <p>
@@ -26,7 +26,7 @@ const Benefits = () => {
               in their respective fields, ensuring you a great career.
             </p>
           </div>
-          <div className="benefit-item">
+          <div className="benefit-item" data-aos="fade-up" data-aos-delay="150">
             <ImportContactsIcon />
             <p className="b-title">Hands-On Training</p>
             <p>
@@ -34,7 +34,7 @@ const Benefits = () => {
               theoretical which enhances your learning experience.
             </p>
           </div>
-          <div className="benefit-item">
+          <div className="benefit-item" data-aos="fade-up" data-aos-delay="150">
             <EmojiEmotionsIcon />
             <p className="b-title">Learning Is Fun</p>
             <p>
@@ -42,7 +42,7 @@ const Benefits = () => {
               here during online/offline cources.
             </p>
           </div>
-          <div className="benefit-item">
+          <div className="benefit-item" data-aos="fade-up" data-aos-delay="150">
             <JoinLeftIcon />
             <p className="b-title">Offline And Online Training</p>
             <p>

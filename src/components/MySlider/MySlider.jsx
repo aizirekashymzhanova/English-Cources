@@ -15,7 +15,7 @@ export default class MySlider extends Component {
       pauseOnHover: true,
     };
     return (
-      <div className="sliders">
+      <div className="sliders" id="feedbacks">
         <Container>
           <h2>Feedbacks from our students.</h2>
           <Slider {...settings}>

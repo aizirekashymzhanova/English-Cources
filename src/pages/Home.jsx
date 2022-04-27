@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import About from "../components/About/About";
 import Approach from "../components/Approach/Approach";
 

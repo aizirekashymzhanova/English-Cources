@@ -1,27 +1,16 @@
-import { Button, Container, FormControl, Grid, TextField } from "@mui/material";
+import { Button, FormControl, TextField } from "@mui/material";
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import LiveSearch from "../components/LiveSearch/LiveSearch";
-import ProdHero from "../components/ProdHero/ProdHero";
-import ProdList from "../components/Products/ProdList/ProdList";
 import Subscription from "../components/Subscription/Subscription";
 
-const Products = () => {
+const Contact = () => {
   const navigate = useNavigate();
-
   return (
-    <>
-      {/* <div
-        style={{ display: "flex", justifyContent: "center", marginTop: "10px" }}
-      >
-       <LiveSearch />
-      </div> */}
-      <ProdHero />
-
-      <div>
-        <ProdList />
-      </div>
-
+    <div>
+      <h5 style={{ fontSize: "18px", textAlign: "center" }}>
+        EZ- The place where you can learn new skills, meet new friends and feel
+        accomplished, every single day.
+      </h5>
       <div className="submit-form">
         <div className="form-left">
           <div style={{ display: "flex", justifyContent: "space-evenly" }}>
@@ -70,8 +59,8 @@ const Products = () => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-export default Products;
+export default Contact;

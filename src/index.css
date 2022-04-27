@@ -16,13 +16,30 @@ code {
   display: flex;
   font-weight: bold !important;
   font-size: 25px !important;
-  color: red;
   justify-content: center;
 }
 .oneProd-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  align-items: center;
   gap: 10px;
+  box-shadow: 1px 1px 20px rgb(110, 106, 106);
+  margin-bottom: 20px;
+}
+.detail {
+  background-color: #ede9fa;
+}
+.recs-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-around !important ;
+}
+@media all and (max-width: 650px) {
+  .oneProd-detail {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
 }
 
 h3 {
@@ -32,4 +49,64 @@ h3 {
 h4 {
   font-weight: bold;
   color: rgb(15, 156, 244);
+}
+h2 {
+  margin-top: 0 !important;
+}
+
+.prbg {
+  opacity: 0.3;
+}
+.card {
+  background: linear-gradient(
+    to right,
+    rgba(37, 153, 236, 0.54),
+    rgba(15, 66, 218, 0.38)
+  ) !important ;
+  margin-bottom: 20px;
+}
+.submit-form {
+  padding: 20px 50px;
+  margin-bottom: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #f7f7f7;
+}
+.inv-btn {
+  max-width: 180px;
+  margin-top: 20px !important;
+}
+@media all and (max-width: 650px) {
+  .submit-form {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+.bg-anim {
+  background: linear-gradient(to right, #bfd1e6, #e7e3db, #d9e8e9, #e6e0e6);
+  animation: 7s infinite ease-in-out;
+  background-size: 400% 400%;
+  animation-name: bg;
+  min-height: 70vh;
+}
+@keyframes bg {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+.chatRoom {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+}
+a {
+  text-decoration: none !important;
 }

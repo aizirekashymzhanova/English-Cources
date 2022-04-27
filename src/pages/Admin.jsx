@@ -11,6 +11,7 @@ const Admin = () => {
     <div>
       <Container maxWidth="lg">
         <h1>Admin page</h1>
+        <Outlet />
         {pathname !== "/admin/add" ? (
           <Link to="add">
             <IconButton>
@@ -19,7 +20,6 @@ const Admin = () => {
             </IconButton>
           </Link>
         ) : null}
-        <Outlet />
       </Container>
     </div>
   );

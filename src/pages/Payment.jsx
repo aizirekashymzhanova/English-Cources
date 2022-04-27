@@ -34,7 +34,6 @@ export default function App() {
     if (!textValues.name || !textValues.cvv || !textValues.num) {
       notify("error", "Fill all the blanks!");
     } else {
-      notify("success", "Dear customer, thanks for your shopping! ");
       localStorage.removeItem("cart");
       getCartLength();
       navigate("/invoice");
@@ -87,12 +86,7 @@ export default function App() {
           />
         </div>
         <br />
-        <Button
-          variant="outlined"
-          color="warning"
-          className="payment-inp"
-          onClick={handlePay}
-        >
+        <Button variant="contained" className="payment-inp" onClick={handlePay}>
           PAY ${cart.totalPrice}
         </Button>
       </form>

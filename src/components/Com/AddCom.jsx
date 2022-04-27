@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { useComContext } from "../../contexts/ComContextProvider";
-import SendIcon from "@mui/icons-material/Send";
+
 import IosShareIcon from "@mui/icons-material/IosShare";
 import { notify, notifyError } from "../Toastify/Toastify";
 

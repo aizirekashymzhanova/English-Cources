@@ -12,13 +12,14 @@ import Menu from "@mui/material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import InfoIcon from "@mui/icons-material/Info";
-import MoreIcon from "@mui/icons-material/MoreVert";
+import MenuIcon from "@mui/icons-material/Menu";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
-import { Button } from "@mui/material";
+import BookmarksIcon from "@mui/icons-material/Bookmarks";
+import { Button, Typography } from "@mui/material";
 import LocalMallIcon from "@mui/icons-material/LocalMall";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
 import LogoutIcon from "@mui/icons-material/Logout";
-import StarIcon from "@mui/icons-material/Star";
+
 import "./Navbar.css";
 import LiveSearch from "../LiveSearch/LiveSearch";
 import { useAuth } from "../../contexts/AuthContextProvider";
@@ -34,6 +35,9 @@ export default function Navbar() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  React.useEffect(() => {
+    getCartLength();
+  }, []);
   const handleProfileMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -125,8 +129,8 @@ export default function Navbar() {
         <IconButton>
           <InfoIcon />
         </IconButton>
-        <NavLink to="/about" className="mobile-link">
-          <p onClick={handleMobileMenuClose}>About</p>
+        <NavLink to="/contact" className="mobile-link">
+          <p onClick={handleMobileMenuClose}>Contact</p>
         </NavLink>
       </MenuItem>
       <MenuItem>
@@ -147,22 +151,22 @@ export default function Navbar() {
       </MenuItem>
       <MenuItem>
         <IconButton>
-          <BookmarkIcon />
+          <BookmarksIcon />
         </IconButton>
         <NavLink to="/favorite" className="mobile-link">
           <p onClick={handleMobileMenuClose}>My Favorites</p>
         </NavLink>
       </MenuItem>
-
-      <MenuItem>
-        <NavLink to="/admin" className="mobile-link">
-          <IconButton size="large" color="inherit">
-            <InfoIcon />
-          </IconButton>
-          <p>Admin</p>
-        </NavLink>
-      </MenuItem>
-
+      {currentUser?.isAdmin && (
+        <MenuItem>
+          <NavLink to="/admin" className="mobile-link">
+            <IconButton size="large" color="inherit">
+              <InfoIcon />
+            </IconButton>
+            <p onClick={handleMobileMenuClose}>Admin</p>
+          </NavLink>
+        </MenuItem>
+      )}
       <MenuItem onClick={handleProfileMenuOpen}>
         <IconButton
           size="large"
@@ -182,7 +186,7 @@ export default function Navbar() {
       <AppBar position="static" className="navbar-container">
         <Toolbar>
           <Button
-            className="n-link"
+            className="link"
             sx={{
               my: 2,
               color: "black",
@@ -197,7 +201,20 @@ export default function Navbar() {
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            <Button
+            <Typography
+              className="n-link"
+              sx={{
+                my: 2,
+                color: "black",
+                display: "block",
+                fontSize: "14px",
+              }}
+              component={NavLink}
+              to="/"
+            >
+              <div>HOME</div>
+            </Typography>
+            <Typography
               className="n-link"
               sx={{
                 my: 2,
@@ -208,9 +225,9 @@ export default function Navbar() {
               component={NavLink}
               to="/products"
             >
-              COURCES
-            </Button>
-            <Button
+              <div> COURCES</div>
+            </Typography>
+            <Typography
               className="n-link"
               sx={{
                 my: 2,
@@ -219,12 +236,12 @@ export default function Navbar() {
                 fontSize: "14px",
               }}
               component={NavLink}
-              to="/about"
+              to="/contact"
             >
-              ABOUT
-            </Button>
+              <div>CONTACT</div>
+            </Typography>
             {currentUser?.isAdmin && (
-              <Button
+              <Typography
                 className="n-link"
                 sx={{
                   my: 2,
@@ -235,8 +252,8 @@ export default function Navbar() {
                 component={NavLink}
                 to="/admin"
               >
-                ADMIN
-              </Button>
+                <div> ADMIN</div>
+              </Typography>
             )}
           </Box>
           <LiveSearch />
@@ -262,7 +279,7 @@ export default function Navbar() {
                 aria-haspopup="true"
                 color="inherit"
               >
-                <StarIcon />
+                <BookmarksIcon />
               </IconButton>
             </RouterLink>
 
@@ -291,7 +308,7 @@ export default function Navbar() {
               onClick={handleMobileMenuOpen}
               // color="inherit"
             >
-              <MoreIcon />
+              <MenuIcon />
             </IconButton>
           </Box>
         </Toolbar>

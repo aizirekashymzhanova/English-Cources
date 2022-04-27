@@ -87,6 +87,35 @@ const FavoriteContextProvider = ({ children }) => {
     getFav();
   };
 
+  //history
+
+  const createHistory = (item) => {
+    let history = JSON.parse(localStorage.getItem("history"));
+
+    if (!history) {
+      history = {
+        products: [],
+      };
+      localStorage.setItem("history", JSON.stringify(history));
+    }
+    let newProduct = {
+      item: item,
+    };
+
+    let checkProdinHis = history.products.some((obj) => {
+      return obj.item.id === item.id;
+    });
+
+    if (checkProdinHis) {
+      history.products = history.products.filter((obj) => {
+        return history.products;
+      });
+    } else {
+      history.products.push(newProduct);
+    }
+    localStorage.setItem("history", JSON.stringify(history));
+  };
+
   return (
     <favoriteContext.Provider
       value={{
@@ -95,6 +124,7 @@ const FavoriteContextProvider = ({ children }) => {
         getFav,
         deleteProdInFav,
         isProdInFav,
+        createHistory,
       }}
     >
       {children}

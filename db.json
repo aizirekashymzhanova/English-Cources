@@ -5,8 +5,18 @@
       "type": "ADULTS",
       "price": 100,
       "description": "The general course is designed for students who would like to learn a foreign language from the very beginning or continue to study it in order to achieve a certain level . The classes train all aspects of the language: speaking, reading, writing, listening and grammar.",
-      "img": "https://previews.123rf.com/images/denispc/denispc1609/denispc160900070/64365066-%C3%A9tudiants-cartoon-couple-adolescent-avec-sacs-%C3%A0-dos-et-des-livres-.jpg",
+      "img": "https://t4.ftcdn.net/jpg/03/79/31/57/360_F_379315711_9dYf0jyywapP9DEJrgd2H39pISP2SVDS.jpg",
+      "imgS": "https://englishshow.ru/img/kursy_1.png",
       "id": 1
+    },
+    {
+      "title": "TOEFL",
+      "type": "EXAM",
+      "price": 200,
+      "description": "The TOEFL exam is the most famous and widely accepted English language assessment in the world. Passing this test has helped millions of people achieve their dreams of studying, working or living abroad. More than 10,000 higher education institutions, government agencies and organizations around the world recognize TOEFL test scores.\n\nThis course will help you figure out what you need to achieve the best score on the TOEFL exam.",
+      "img": "https://image.shutterstock.com/image-vector/toefl-word-concept-test-english-260nw-1571789665.jpg",
+      "imgS": "https://englishshow.ru/img/kursy_2.png",
+      "id": 6
     },
     {
       "title": "English for kids",
@@ -14,14 +24,25 @@
       "price": 120,
       "description": "Education is conducted according to a program that includes the development of oral and written speech, in-depth study of grammar, vocabulary replenishment, the study of translation techniques, as well as great attention is paid to pronunciation and listening skills.Each language program for children is individual and depends on the level at which the child speaks the language, as well as on his age. The lessons use songs, videos, games, as well as special foreign language manuals for children published abroad.",
       "img": "https://is2-ssl.mzstatic.com/image/thumb/Purple71/v4/fb/04/84/fb04843e-3da5-ddab-fd43-1b4429645621/source/512x512bb.jpg",
+      "imgS": "https://englishshow.ru/img/kursy_5.png",
       "id": 2
+    },
+    {
+      "title": "IELTS",
+      "type": "EXAM",
+      "price": 200,
+      "description": "The IELTS exam preparation course, developed by the teachers of our school, will help English learners not only prepare for the exam itself, but also improve all language skills.\n\nThe IELTS exam is one of the most famous and widely accepted English language assessments in English-speaking countries - the UK, New Zealand, Australia and the USA. Passing this test has helped millions of people achieve their dreams of studying, working or living abroad.",
+      "img": "https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/04/21215950/IELTS-Preparation-Tips.png",
+      "imgS": "https://englishshow.ru/img/kursy_1.png",
+      "id": 5
     },
     {
       "title": "Business English",
       "type": "ADULTS",
       "price": 150,
-      "description": "If you have already reached the A2 language level, then you can enroll in a business foreign language course. The main goal of the course is the development of business vocabulary and communication by the student, while the course also has an important grammatical component. After completing the business course, you will be able to: describe a firm or company, write a resume and job application, analyze and compose advertising, discuss prices and products, etc.",
+      "description": "If you have already reached the A2 language level, then you can enroll in a business foreign language course. The main goal of the course is the development of business vocabulary and communication by the student. After completing the business course, you will be able to: describe a firm or company, write a resume and job application, analyze and compose advertising, discuss prices and products, etc.",
       "img": "https://previews.123rf.com/images/rawpixel/rawpixel1404/rawpixel140400001/27154637-les-gens-d-affaires-dans-une-r%C3%A9union-et-symboles-social-media-relat%C3%A9s-ci-dessus.jpg",
+      "imgS": "https://englishshow.ru/img//kursy/korporativnyj-anglijskij.png",
       "id": 3
     },
     {
@@ -30,23 +51,8 @@
       "price": 80,
       "description": "The main goal of the talking club, designed for students of all levels of language proficiency. The main aspects that the teacher pays attention to : speaking and listening, but there are also elements of grammar and reading in the classes. The course program includes both everyday situations and more formal communication models. Special aids are used to develop speaking skills.",
       "img": "https://lermontovka-spb.ru/m/t/event_photo/9_%D0%B0%D0%B2%D0%B3%D1%83%D1%81%D1%82%D0%B0_large.jpg",
+      "imgS": "https://nextlevel.kiev.ua/wp-content/uploads/2020/11/onlinecourse@4x-1.svg",
       "id": 4
-    },
-    {
-      "title": "IELTS",
-      "type": "EXAM",
-      "price": 200,
-      "description": "The IELTS exam preparation course, developed by the teachers of our school, will help English learners not only prepare for the exam itself, but also improve all language skills.\n\nThe IELTS exam is one of the most famous and widely accepted English language assessments in English-speaking countries - the UK, New Zealand, Australia and the USA. Passing this test has helped millions of people achieve their dreams of studying, working or living abroad.",
-      "img": "https://leverageedublog.s3.ap-south-1.amazonaws.com/blog/wp-content/uploads/2020/04/21215950/IELTS-Preparation-Tips.png",
-      "id": 5
-    },
-    {
-      "title": "TOEFL",
-      "type": "EXAM",
-      "price": 200,
-      "description": "The TOEFL exam is the most famous and widely accepted English language assessment in the world. Passing this test has helped millions of people achieve their dreams of studying, working or living abroad. More than 10,000 higher education institutions, government agencies and organizations around the world recognize TOEFL test scores.\n\nThis course will help you figure out what you need to achieve the best score on the TOEFL exam.",
-      "img": "https://image.shutterstock.com/image-vector/toefl-word-concept-test-english-260nw-1571789665.jpg",
-      "id": 6
     },
     {
       "title": "FCE/CAE/CPE",
@@ -54,6 +60,7 @@
       "price": 200,
       "description": "There are three types of exams, depending on the level - FCE (First Certificate English), which corresponds to the B2 level, CAE (Certificate in Advanced English), which corresponds to the C1 level, and CPE (Certificate of Proficiency in English), which corresponds to the C2 level.\n\nThese exams serve mainly for studying in English-speaking countries, for obtaining scholarships and grants. Different universities require certificates of different levels.",
       "img": "https://media.istockphoto.com/vectors/happy-group-of-teen-university-student-vector-illustration-cartoon-vector-id1069919200?k=20&m=1069919200&s=170667a&w=0&h=OHobYAlhpYhIxDCzmSPU8xtCUT1H4GCyS504fFcT7Og=",
+      "imgS": "https://englishshow.ru/img/kursy_4.png",
       "id": 7
     },
     {
@@ -62,24 +69,24 @@
       "price": 0,
       "description": "After taking this course you will know over 140 terms related to IT industry that will help you feel more comfortable in your professional field.After this course you will find it easier to read documentation and watch tutorials in English",
       "img": "https://xabar.uz/static/crop/1/3/736_736_95_1334284851.jpg",
+      "imgS": "https://iacite.org/wp-content/uploads/2020/05/14-1024x576.jpg",
       "id": 8
+    },
+    {
+      "title": "Camp",
+      "type": "KIDS",
+      "price": 100,
+      "description": "Summers are for having fun and enjoying the sun and nice weather. Learning through entertaining and interactive material is probably the best way to inspire a child’s desire to learn. That is why  Summer courses might be just the right thing for you and your child. ",
+      "img": "https://color-chicks.ru/wp-content/uploads/2021/07/14-1-1024x683.jpg",
+      "imgS": "https://englishshow.ru/img/kursy_2.png",
+      "id": 9
     }
   ],
   "likes": [
     {
-      "user": "admin@ez.com",
-      "prodId": 1,
-      "id": 4
-    },
-    {
       "user": "aiz@ez.com",
       "prodId": 3,
       "id": 7
-    },
-    {
-      "user": "admin@ez.com",
-      "prodId": 2,
-      "id": 8
     },
     {
       "user": null,
@@ -105,15 +112,69 @@
       "user": "aiz@ez.com",
       "prodId": 5,
       "id": 15
+    },
+    {
+      "user": "ez@ez.com",
+      "prodId": 4,
+      "id": 16
+    },
+    {
+      "user": "ez@ez.com",
+      "prodId": 3,
+      "id": 19
+    },
+    {
+      "user": "qwer@yahoo.com",
+      "prodId": 2,
+      "id": 22
+    },
+    {
+      "user": "qwer@yahoo.com",
+      "prodId": 1,
+      "id": 23
+    },
+    {
+      "user": "ez@ez.com",
+      "prodId": 2,
+      "id": 24
+    },
+    {
+      "user": "ez@ez.com",
+      "prodId": 1,
+      "id": 25
+    },
+    {
+      "user": "admi@ez.com",
+      "prodId": 6,
+      "id": 26
+    },
+    {
+      "user": "admin@ez.com",
+      "prodId": 6,
+      "id": 28
+    },
+    {
+      "user": "john@ez.com",
+      "prodId": 2,
+      "id": 29
+    },
+    {
+      "user": "john@ez.com",
+      "prodId": 6,
+      "id": 30
+    },
+    {
+      "user": "aizz@yahoo.com",
+      "prodId": 6,
+      "id": 31
+    },
+    {
+      "user": "aizz@yahoo.com",
+      "prodId": 2,
+      "id": 32
     }
   ],
   "comments": [
-    {
-      "author": "admin@ez.com",
-      "title": "nmb",
-      "prodId": 1,
-      "id": 1
-    },
     {
       "title": "jhfjhfjhfj",
       "author": "admin@ez.com",
@@ -127,58 +188,22 @@
       "id": 5
     },
     {
-      "author": "admin@ez.com",
-      "title": "bg",
-      "prodId": 2,
-      "id": 6
-    },
-    {
-      "author": "admin@ez.com",
-      "title": "asdgjasadasd",
-      "prodId": 3,
-      "id": 7
-    },
-    {
-      "author": "qwerty@yahoo.com",
-      "title": "nm,mn,",
-      "prodId": 5,
-      "id": 9
-    },
-    {
-      "title": "bnmnbmm,n,msd",
-      "author": "aiz@ez.com",
-      "prodId": 2,
-      "id": 12
-    },
-    {
-      "author": "admin@ez.com",
-      "title": "dfgfhsg",
-      "prodId": 3,
-      "id": 13
-    },
-    {
-      "author": "admin@ez.com",
-      "title": "nm",
-      "prodId": 5,
-      "id": 14
-    },
-    {
-      "author": "aiz@ez.com",
-      "title": "nm",
-      "prodId": 2,
-      "id": 15
-    },
-    {
-      "title": "mbn",
-      "author": "aiz@ez.com",
-      "prodId": 1,
-      "id": 16
-    },
-    {
       "author": "aiz@ez.com",
       "title": "edited",
       "prodId": 7,
       "id": 17
+    },
+    {
+      "author": "john@ez.com",
+      "title": "Helllooo everyone!!!",
+      "prodId": 1,
+      "id": 18
+    },
+    {
+      "author": "john@ez.com",
+      "title": "heyyyy",
+      "prodId": 2,
+      "id": 19
     }
   ]
 }

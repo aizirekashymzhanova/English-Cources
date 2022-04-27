@@ -15,7 +15,21 @@
 }
 .n-link {
   color: rgb(32, 33, 32) !important;
-  border-radius: 50px !important;
   width: 8em;
   text-align: center;
+  cursor: pointer;
+  transform: skew(-25deg);
+  text-decoration: none !important;
+  margin-right: 10px !important;
+  line-height: 30px !important;
+
+  box-shadow: 1px 1px 10px #bab4f1;
+}
+.n-link:hover {
+  border: none;
+  border: 1px solid #d1cfdc;
+  box-shadow: none;
+}
+.n-link div {
+  transform: skew(25deg);
 }

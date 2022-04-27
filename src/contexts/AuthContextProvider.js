@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 
 import {
   createUserWithEmailAndPassword,
+  sendPasswordResetEmail,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
@@ -122,18 +123,33 @@ const AuthContextProvider = ({ children }) => {
           isLogged: true,
         });
       } else {
-        console.log("no user from authListener");
+        console.log("no user");
       }
     });
   };
-
+  //resetPassword
   useEffect(() => {
     authListener();
   }, []);
+  const forgotPassword = async (email) => {
+    try {
+      let newP = await sendPasswordResetEmail(auth, email);
+      console.log("Code send");
+    } catch (err) {
+      console.log(err);
+    }
+    // console.log(sendPasswordResetEmail);
+  };
 
   return (
     <authContext.Provider
-      value={{ currentUser, registerUser, logOutUser, loginUser }}
+      value={{
+        currentUser,
+        registerUser,
+        logOutUser,
+        loginUser,
+        forgotPassword,
+      }}
     >
       {children}
     </authContext.Provider>

@@ -1,6 +1,8 @@
 .benefits {
   padding: 20px;
+  padding-top: 40px;
   display: grid;
+  font-weight: bold;
   justify-content: center;
   grid-template-columns: 500px 1fr;
   background-color: white;
@@ -13,6 +15,9 @@
   gap: 30px;
   grid-template-columns: 1fr 1fr;
   text-align: center;
+  @media all and (max-width: 420px) {
+    grid-template-columns: 1fr;
+  }
   .benefit-item {
     border: 2px solid gray;
     border-radius: 10px;
@@ -26,12 +31,10 @@
   }
 }
 .benefit-item:hover {
-  transition: all;
-  background: rgb(206, 168, 213);
-
-  color: white;
+  background: rgb(222, 243, 255);
 }
 .benefit-title {
+  margin-top: 30px !important;
   display: grid;
   justify-content: center;
 }

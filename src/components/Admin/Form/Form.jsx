@@ -17,6 +17,7 @@ const initValues = {
   price: "",
   description: "",
   img: "",
+  imgS: "",
 };
 
 const Form = ({ saveValues, compForEdit, oneProd, getOneProduct }) => {
@@ -108,6 +109,15 @@ const Form = ({ saveValues, compForEdit, oneProd, getOneProduct }) => {
         />
         <TextField
           className="text-field"
+          name="imgS"
+          value={inpValues.imgS}
+          onChange={(e) => handleChange(e)}
+          id="outlined-basic"
+          label="Image2"
+          variant="outlined"
+        />
+        <TextField
+          className="text-field"
           name="description"
           value={inpValues.description}
           onChange={(e) => handleChange(e)}
@@ -117,13 +127,8 @@ const Form = ({ saveValues, compForEdit, oneProd, getOneProduct }) => {
           multiline
           rows={3}
         />
-        <Button
-          type="submit"
-          variant="contained"
-          color="warning"
-          className="text-button"
-        >
-          Submit
+        <Button type="submit" variant="contained" className="text-button">
+          ADD
         </Button>
       </form>
     </div>

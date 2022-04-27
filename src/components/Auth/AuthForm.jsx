@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Link as AuthLink } from "react-router-dom";
+import { Link as AuthLink, NavLink } from "react-router-dom";
 
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
@@ -26,7 +26,7 @@ function Copyright(props) {
     >
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        English Zone
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -55,25 +55,18 @@ export default function AuthForm({
 
   return (
     <ThemeProvider theme={theme}>
-      <Grid container component="main" sx={{ height: "100vh" }}>
+      <Grid container component="main">
         <CssBaseline />
+
         <Grid
           item
-          xs={false}
-          sm={4}
-          md={7}
-          sx={{
-            backgroundImage: "url(https://source.unsplash.com/random)",
-            backgroundRepeat: "no-repeat",
-            backgroundColor: (t) =>
-              t.palette.mode === "light"
-                ? t.palette.grey[50]
-                : t.palette.grey[900],
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        />
-        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          xs={12}
+          sm={12}
+          md={12}
+          component={Paper}
+          elevation={6}
+          square
+        >
           <Box
             sx={{
               my: 8,
@@ -128,15 +121,11 @@ export default function AuthForm({
                 {btnText}
               </Button>
               <Grid container>
-                <Grid item xs>
-                  <Link href="#" variant="body2">
-                    Forgot password?
-                  </Link>
-                </Grid>
                 <Grid item>
                   <AuthLink to={link}>{linkText}</AuthLink>
                 </Grid>
               </Grid>
+              <NavLink to="/reset">Forgot password?</NavLink>
               <Copyright sx={{ mt: 5 }} />
             </Box>
           </Box>

@@ -32,67 +32,70 @@ export default function App() {
     }
   };
   return (
-    <div
-      style={{
-        paddingTop: "10px",
-        paddingBottom: "10px",
-        margin: "auto",
-        textAlign: "center",
-      }}
-    >
-      <>
-        <TextField
-          id="standard-basic"
-          name="name"
-          label="First  Name"
-          variant="standard"
-          value={textValues.name}
-          onChange={handleChange}
-        />
-        <br />
-        <TextField
-          id="standard-basic"
-          name="lastName"
-          label="Last Name"
-          variant="standard"
-          value={textValues.lastName}
-          onChange={handleChange}
-        />
-        <br />
-        <TextField
-          id="standard-basic"
-          name="phone"
-          label="Phone Number"
-          variant="standard"
-          value={textValues.phone}
-          onChange={handleChange}
-        />
-        <br />
-        <TextField
-          id="standard-basic"
-          name="address"
-          label="Address"
-          variant="standard"
-          value={textValues.address}
-          onChange={handleChange}
-        />
-        <br />
-        <br />
+    <div className="bg-anim">
+      <div
+        style={{
+          paddingTop: "10px",
+          paddingBottom: "10px",
+          margin: "auto",
+          textAlign: "center",
+        }}
+      >
+        <>
+          <h2>Order Form</h2>
+          <TextField
+            id="standard-basic"
+            name="name"
+            label="First  Name"
+            variant="standard"
+            value={textValues.name}
+            onChange={handleChange}
+          />
+          <br />
+          <TextField
+            id="standard-basic"
+            name="lastName"
+            label="Last Name"
+            variant="standard"
+            value={textValues.lastName}
+            onChange={handleChange}
+          />
+          <br />
+          <TextField
+            id="standard-basic"
+            name="phone"
+            label="Phone Number"
+            variant="standard"
+            value={textValues.phone}
+            onChange={handleChange}
+          />
+          <br />
+          <TextField
+            id="standard-basic"
+            name="address"
+            label="Address"
+            variant="standard"
+            value={textValues.address}
+            onChange={handleChange}
+          />
+          <br />
+          <br />
 
-        <div style={{ display: "flex" }}></div>
-        <br />
-        <Typography>Total items quantity: {cartLength}</Typography>
-        <br />
-        <Button
-          variant="outlined"
-          color="warning"
-          className="payment-inp"
-          onClick={handlePay}
-        >
-          PAY ${cart.totalPrice}
-        </Button>
-        <br />
-      </>
+          <div style={{ display: "flex" }}></div>
+          <br />
+          <Typography>Total items quantity: {cartLength}</Typography>
+          <Typography>Total price: {cart.totalPrice}</Typography>
+          <br />
+          <Button
+            variant="contained"
+            className="payment-inp"
+            onClick={handlePay}
+          >
+            PAY
+          </Button>
+          <br />
+        </>
+      </div>
     </div>
   );
 }

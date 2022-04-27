@@ -29,18 +29,22 @@ const Filter = ({
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <Button onClick={btnFilter}>
-        <h2 style={{ color: "black" }}>Filter</h2>
+    <div style={{ textAlign: "start" }}>
+      <Button
+        onClick={btnFilter}
+        variant="contained"
+        style={{ height: "40px", backgroundColor: "white" }}
+      >
+        <h4 style={{ color: "black" }}>Filter </h4>
       </Button>
       <div style={{ display: filter ? "block" : "none" }}>
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Type: </FormLabel>
+          <FormLabel id="demo-radio-buttons-group-label"></FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="female"
             name="radio-buttons-group"
-            style={{ display: "flex", flexDirection: "row" }}
+            // style={{ display: "flex", flexDirection: "row" }}
             value={type}
             onChange={(e) => {
               setType(e.target.value);
@@ -59,7 +63,7 @@ const Filter = ({
         </FormControl>
         <br />
         <br />
-        <Typography color="text.secondary">Price</Typography>
+        <Typography color="text.secondary">Price $</Typography>
         <Slider
           sx={{ maxWidth: "350px" }}
           value={slider}
@@ -72,7 +76,11 @@ const Filter = ({
           min={minSliderValue}
         />
         <br />
-        <Button varianr="outlined" onClick={handleReset}>
+        <Button
+          onClick={handleReset}
+          variant="contained"
+          style={{ height: "40px", backgroundColor: "white", color: "black" }}
+        >
           Reset
         </Button>
       </div>

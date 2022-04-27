@@ -11,9 +11,10 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
 import { useFavorite } from "../contexts/FavContextProvider";
+import BrowseHistory from "../components/BrowseHistory/BrowseHistory";
 
 const Favorite = () => {
-  const { fav, getFav, deleteProdInFav } = useFavorite();
+  const { fav, getFav, deleteProdInFav, createHistory } = useFavorite();
 
   useEffect(() => {
     getFav();
@@ -60,7 +61,7 @@ const Favorite = () => {
                       component={Link}
                       to={`/products/detail/${elem.item.id}`}
                     >
-                      more...
+                      Details...
                     </Button>
                   </CardContent>
                 </Card>
@@ -70,11 +71,10 @@ const Favorite = () => {
         ) : (
           <>
             <Grid item xs={12} sm={12} md={12}>
-              <h2>You don't have any favorite product yet!</h2>
               <br />
               <img
                 width="60%"
-                src="https://media0.giphy.com/media/3ohhwsjzpejaSWoTkI/200.gif"
+                src="https://www.esri.com/arcgis-blog/wp-content/uploads/2018/01/fav-3.png"
                 alt=""
               />
               <br />
@@ -85,12 +85,14 @@ const Favorite = () => {
                 to="/products"
                 sx={{ margin: "10px" }}
               >
-                Start Shopping
+                CHECK COURCES
               </Button>
             </Grid>
           </>
         )}
       </Grid>
+      <h2>Browse History</h2>
+      <BrowseHistory />
     </div>
   );
 };

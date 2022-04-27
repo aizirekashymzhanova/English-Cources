@@ -1,0 +1,59 @@
+.four-parent {
+  display: grid;
+  margin-top: 0 !important;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-items: center !important;
+  gap: 10px;
+  padding-bottom: 10px;
+  padding-left: 50px;
+  margin: auto !important;
+
+  @media all and (max-width: 700px) {
+    grid-template-columns: 1fr 1fr;
+    padding-left: 0px;
+  }
+  p {
+    font-weight: bold;
+  }
+}
+.products-hr {
+  h2 {
+    text-align: center;
+  }
+}
+
+.four {
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50%;
+  overflow: hidden;
+  max-width: 250px;
+  height: auto;
+  background-color: #fff;
+
+  &:hover {
+    box-shadow: 1px 1px 10px rgb(220, 209, 219);
+  }
+}
+.pr-hero {
+  background-color: #ede9fa;
+
+  h2 {
+    text-align: center;
+  }
+}
+.prod-hero-descr {
+  gap: 30px;
+  padding-left: 20px;
+
+  li {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  p {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}

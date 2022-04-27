@@ -5,13 +5,16 @@ import { useLocation, useSearchParams } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
 import { styled, alpha } from "@mui/material/styles";
+import "./LiveSearch.scss";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.black, 0.15),
+  boxShadow: "1px 1px 10px #bab4f1",
+
   "&:hover": {
-    backgroundColor: alpha(theme.palette.common.black, 0.25),
+    border: "1px solid #d1cfdc",
+    boxShadow: "none",
   },
   marginRight: theme.spacing(2),
   marginLeft: 0,
@@ -35,7 +38,7 @@ const SearchIconWrapper = styled("div")(({ theme }) => ({
 
 const StyledInputBase = styled(InputBase)(({ theme }) => ({
   // color: "inherit",
-  color: "white",
+  color: "black",
   "& .MuiInputBase-input": {
     padding: theme.spacing(1, 1, 1, 0),
     paddingLeft: `calc(1em + ${theme.spacing(4)})`,

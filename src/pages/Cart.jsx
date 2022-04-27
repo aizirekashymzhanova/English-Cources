@@ -2,7 +2,12 @@ import React, { useEffect } from "react";
 
 import { Link, useNavigate } from "react-router-dom";
 
-import { Container } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Container,
+} from "@mui/material";
 import { Button } from "@mui/material";
 import { useCart } from "../contexts/CartContextProvider";
 import Table from "@mui/material/Table";
@@ -17,6 +22,7 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Cart = () => {
   const { cart, getCart, changeProductCount, deleteProdInCart, getCartLength } =
@@ -26,7 +32,7 @@ const Cart = () => {
   useEffect(() => {
     getCart();
   }, []);
-  console.log(cart.products);
+
   return (
     <div style={{ textAlign: "center" }}>
       <Container maxWidth="lg">
@@ -108,14 +114,11 @@ const Cart = () => {
                 </TableBody>
               </Table>
             </TableContainer>
-            <Typography variant="h4" style={{ margin: "20px" }}>
-              Total price : ${cart.totalPrice}
-            </Typography>
+
             <Button
               variant="contained"
-              color="warning"
               onClick={() => navigate("/orderform")}
-              sx={{ marginBottom: "20px" }}
+              sx={{ margin: "20px auto" }}
             >
               BUY NOW FOR ${cart.totalPrice}
             </Button>
@@ -123,16 +126,45 @@ const Cart = () => {
         ) : (
           <div style={{ textAlign: "center" }}>
             <img
-              width="100%"
-              src="https://cdn3.iconfinder.com/data/icons/shopping-and-ecommerce-28/90/empty_cart-512.png"
+              width="60%"
+              src="https://naukariemployment.com/assets/images/emptycart.png"
               alt=""
             />
             <br />
-            <Button component={Link} to="/products" sx={{ margin: "20px" }}>
+            <Button
+              component={Link}
+              variant="contained"
+              to="/products"
+              sx={{ margin: "20px" }}
+            >
               Start Shopping
             </Button>
           </div>
         )}
+
+        <h2>My cources</h2>
+        <div style={{ display: "none" }}>
+          {cart?.products.length > 0 ? (
+            cart.products.map((elem) => (
+              <div>
+                <Accordion key={elem.item.id}>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls="panel1a-content"
+                    id="panel1a-header"
+                  >
+                    <Typography>{elem.item.title}</Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Typography>{elem.item.descr}</Typography>
+                  </AccordionDetails>
+                </Accordion>
+              </div>
+            ))
+          ) : (
+            <h3>You don't have any active cources ,yet!</h3>
+          )}
+        </div>
       </Container>
     </div>
   );

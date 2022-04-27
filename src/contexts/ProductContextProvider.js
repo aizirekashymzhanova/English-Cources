@@ -15,7 +15,7 @@ export const useProductContext = () => {
 const INIT_STATE = {
   products: [],
   oneProd: null,
-  pageTotalCount: 1,
+  pageTotalCount: +1,
   comments: [],
 };
 
