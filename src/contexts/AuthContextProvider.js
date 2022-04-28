@@ -127,14 +127,14 @@ const AuthContextProvider = ({ children }) => {
       }
     });
   };
-  //resetPassword
   useEffect(() => {
     authListener();
   }, []);
+
+  //resetPassword
   const forgotPassword = async (email) => {
     try {
       let newP = await sendPasswordResetEmail(auth, email);
-      console.log("Code send");
     } catch (err) {
       console.log(err);
     }

@@ -11,6 +11,7 @@ import {
   getDocs,
   orderBy,
   query,
+  onSnapshot,
 } from "firebase/firestore";
 import { useAuth } from "../../contexts/AuthContextProvider";
 import { Button } from "@mui/material";
@@ -53,24 +54,36 @@ const RealTimechat = () => {
       collection(firestore, "messages"),
       orderBy("createdAt")
     );
-    const docSnap = await getDocs(docRef);
+    // const docSnap = await getDocs(docRef);
     //console.log(docSnap);
 
-    if (docSnap.empty) {
-      console.log("No such document!");
-      return;
-    }
-    let allMsgs = [];
-    docSnap.forEach((doc) => {
-      // console.log(docSnap);
-      allMsgs.push({ id: doc.id, ...doc.data() });
+    //here
+    const unsubscribe = onSnapshot(docRef, (querySnapshot) => {
+      const msgs = [];
+      querySnapshot.forEach((doc) => {
+        console.log(doc.data(), "doc here");
+        msgs.push(doc.data());
+      });
+      setData(msgs);
     });
-    setData(allMsgs);
+    // end
+
+    // if (docSnap.empty) {
+    //   console.log("No such document!");
+    //   return;
+    // }
+    // let allMsgs = [];
+    // docSnap.forEach((doc) => {
+    //   // console.log(docSnap);
+    //   allMsgs.push({ id: doc.id, ...doc.data() });
+    // });
+    // setData(allMsgs);
   };
 
   useEffect(() => {
     getMsgs();
-  }, [data]);
+  }, []);
+  // }, [data]);
 
   //Delete one message
   const handleDelete = async (id) => {
@@ -82,16 +95,6 @@ const RealTimechat = () => {
     }
     getMsgs();
   };
-
-  // const handleDelete = async (id) => {
-  //   const forDel = doc(firestore, "messages", id);
-  //   try {
-  //     await deleteDoc(forDel);
-  //   } catch (err) {
-  //     alert(err);
-  //   }
-  //   getMsgs();
-  // };
 
   return (
     <div>

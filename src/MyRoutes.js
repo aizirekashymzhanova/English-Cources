@@ -20,8 +20,10 @@ import Chat from "./pages/Chat";
 import RequireAuth from "./components/Auth/RequireAuth";
 import Contact from "./pages/Contact";
 import Error from "./pages/Error";
+import { useAuth } from "./contexts/AuthContextProvider";
 
 const MyRoutes = () => {
+  const { currentUser } = useAuth();
   return (
     <Routes>
       <Route element={<MainLayout />}>
@@ -42,9 +44,7 @@ const MyRoutes = () => {
         <Route
           path="/admin"
           element={
-            <RequireAuth>
-              <Admin />
-            </RequireAuth>
+            <RequireAuth>{currentUser.isAdmin && <Admin />}</RequireAuth>
           }
         >
           <Route index element={<List />} />
